@@ -24,7 +24,7 @@ We are now using two new companies for tracking data in our client-side applicat
 
 Their SDK works differently, we need to be able to use the two libraries, switch between them, but we will never use both at the same time.
 
-Create a new [API](https://en.wikipedia.org/wiki/API), in terms of client code / interface (not a backend API), so that we can use the two external tracking libraries in our applications in a manner that is using the [abstraction principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)), and using the same code for both libraries.
+Create a new [API](https://en.wikipedia.org/wiki/API), in terms of client code / interface (not a backend API), so that we can use the two external tracking libraries in our applications in a manner that is using the [abstraction principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)).
 
 See the [src/index.ts](./src/index.ts) file for a "usage" with the libraries directly, this code is only there to show that the libraries can be used, everything can be removed.
 

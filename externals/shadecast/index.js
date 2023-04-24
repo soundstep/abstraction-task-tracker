@@ -2,7 +2,7 @@ export const shadecast = {
     configure: () => {
         console.log('Shadecast configured');
     },
-    report: () => {
-        console.log('Shadecast report sent');
+    report: (sessionId, event) => {
+        console.log('Shadecast report sent', sessionId, event);
     }
 };

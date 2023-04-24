@@ -2,8 +2,8 @@ import { oakom } from 'oakom';
 import { shadecast } from 'shadecast';
 
 oakom.init('oakcom-client-secret-123');
-oakom.startSession();
-oakom.sendEvent({
+const session = oakom.startSession();
+session.sendEvent({
     id: '123456',
     timestamp: 1682327354838,
     name: 'cta-click',
@@ -24,8 +24,7 @@ await shadecast.configure({
     version: '1.0.0'
 });
 
-shadecast.report({
-    sessionId: 'session-id',
+shadecast.report('session-id', {
     date: '2023-04-24T09:19:10.700Z',
     name: 'cta-click',
     screenId: 123,

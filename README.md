@@ -22,7 +22,7 @@ We are now using two new companies for tracking data in our client-side applicat
 - Oakom
 - Shadecast
 
-Their SDK works differently, we need to be able to use the two systems and switch between them.
+Their SDK works differently, we need to be able to use the two libraries, switch between them, but we will never use both at the same time.
 
 Create a new [API](https://en.wikipedia.org/wiki/API), in terms of client code / interface (not a backend API), so that we can use the two external tracking libraries in our applications in a manner that is using the [abstraction principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)).
 
@@ -34,6 +34,10 @@ Requirements:
 - must be written in typescript
 - must be strongly-typed
 
+Notes:
+
+- Everything can be done in one file if you wish, the direction and programming concepts are important, not the file structure.
+
 ### Oakom event
 
 ```ts
@@ -41,12 +45,12 @@ import { oakom } from 'oakom';
 
 oakom.init('oakcom-client-secret-123');
 
-oakom.startSession();
+const session = oakom.startSession();
 
-oakom.sendEvent({
+session.sendEvent({
     id: '123456',
-    timestamp: 1682327354838,
     name: 'cta-click',
+    timestamp: 1682327354838,
     platform: 'ctv',
     version: '1.0.0',
     data: {
@@ -70,10 +74,9 @@ await shadecast.configure({
     version: '1.0.0'
 });
 
-shadecast.report({
-    sessionId: 'session-id',
+shadecast.report('session-id', { // session-id can be any string (value is not relevant)
+    id: 'cta-click',
     date: '2023-04-24T09:19:10.700Z',
-    name: 'cta-click',
     screenId: 123,
     data: {
         customData: 'anything',

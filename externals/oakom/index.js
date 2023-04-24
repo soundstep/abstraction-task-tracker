@@ -4,8 +4,10 @@ export const oakom = {
     },
     startSession: () => {
         console.log('Oakcom session started');
-    },
-    sendEvent: () => {
-        console.log('Oakcom event sent');
+        return {
+            sendEvent: (event) => {
+                console.log('Oakcom event sent', event);
+            }
+        }
     }
 };

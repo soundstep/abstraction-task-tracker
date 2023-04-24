@@ -17,13 +17,22 @@ pnpm start
 
 ## Task
 
-We are now using two new companies for tracking data in our applications:
+We are now using two new companies for tracking data in our client-side applications:
 
 - Oakom
 - Shadecast
 
-Their SDK works differently, we need to be able to use the two systems and maybe switch between them.  
-Create "something" so that we can use the two tracking systems in our applications in an abstracted manner.
+Their SDK works differently, we need to be able to use the two systems and switch between them.
+
+Create a new [API](https://en.wikipedia.org/wiki/API), in terms of client code / interface (not a backend API), so that we can use the two external tracking libraries in our applications in a manner that is using the [abstraction principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)).
+
+See the [src/index.ts](./src/index.ts) file for a "usage" with the libraries directly, this code is only there to show that the libraries can be used, everything can be removed.
+
+Requirements:
+
+- must work
+- must be written in typescript
+- must be strongly-typed
 
 ### Oakom event
 

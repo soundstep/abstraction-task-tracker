@@ -84,3 +84,8 @@ shadecast.report('session-id', { // session-id can be any string (value is not r
     }
 });
 ```
+
+## Answer
+
+In a gist.
+
